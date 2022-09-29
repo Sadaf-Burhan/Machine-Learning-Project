@@ -9,5 +9,6 @@ Prior to model design, data analysis was carried out. Upon expanding the trends,
 ![image info](oilprices.jpeg)
 
 Upon checking the bimodal data distribution of oil prices, it was more suitable to select the time frame from 2016 onwards. The main idea was to avoid any biases in model training caused by the high prices of oil, pre-recession. Then categorical variables were analyzed and found that the type of the stores and products by family were the most promising features in terms of sales. Among holidays only National Holiday had a 10% impact on sales increase. After finalizing the features, a pipeline was designed to perform standard scalar transformations and one-hot encoding. Train/Test split was made using 80-20 ratio. For model evaluation, both built-in functions for cross validation and GridSearchcv of sklearn were used. The model achieved above 90% accuracy score for train and test. R2: 0.925, Y_predict Accuracy (RMSE): 6016.24 which lies in the std deviation intervals of the predictor variable. Learning curves also showed that XGBoost was a good predictive model. 
-![image info](learning curve.jpeg)
-Feature importance plots were used to study the features that contributed most in the accurate prediction of XGBoost Regressor.
+![image info](learning curve.jpg)
+Feature importance plots were used to study the features that contributed most in the accurate prediction of XGBoost Regressor. Finally, XGBoost model was used to forecast sales using the blind test dataset which was dated from 2017-08-16 till 2017-08-31. One of the future aspects of this project could be to check how close these forecasted sales were when compared to the actual data.
+![image info](predicted_sales.jpg)
